@@ -1,9 +1,10 @@
 // ==UserScript==
 // @name		YouTube Favicon to Channel logo
 // @version		1.1
-// @description	Changes the YouTube Favicon to the Channel logo
+// @description	Changes the YouTube Favicon to the Channel Logo
 // @author		Kartik Soneji
 // @updateURL	https://openuserjs.org/meta/KartikSoneji/YouTube_Favicon_to_Channel_logo.meta.js
+// @supportURL	https://github.com/KartikSoneji/userscripts/issues
 // @match		https://www.youtube.com/*
 // @exclude		https://www.youtube.com/
 // @exclude		https://www.youtube.com/tv*
