@@ -3,7 +3,7 @@
 // @description	Performs a reverse Google Image Search with the image from the clipboard.
 // @license		MIT
 // @version		1.0
-// @supportURL	https://github.com/KartikSoneji/userscripts/issues
+// @supportURL	https://gitlab.com/KartikSoneji/userscripts/issues
 // @updateURL	https://openuserjs.org/meta/KartikSoneji/Paste_Image_into_Google_Image_Search.meta.js
 // @downloadURL	https://openuserjs.org/install/KartikSoneji/Paste_Image_into_Google_Image_Search.user.js
 // @match		https://www.google.com/search*tbm=isch*
