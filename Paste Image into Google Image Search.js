@@ -1,6 +1,7 @@
 // ==UserScript==
 // @name		Paste Image into Google Image Search
 // @description	Performs a reverse Google Image Search with the image from the clipboard.
+// @author		Kartik Soneji
 // @license		MIT
 // @version		1.0
 // @supportURL	https://gitlab.com/KartikSoneji/userscripts/issues
