@@ -26,7 +26,7 @@
 	});
 
 	function handlePasteEvent(e){
-		getImageURLFromPasteEvent(e).then(url => searchByImageURL(url)).catch(e => e);
+		getImageURLFromPasteEvent(e).then(searchByImageURL).catch(console.error);
 	}
 
 	function searchByImageURL(url){
