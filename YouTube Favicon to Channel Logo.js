@@ -32,10 +32,10 @@
 
 	console.log("Started");
 	
-	roundImageToDataUrl(JSON.stringify(window.ytInitialData).match(urlRegex)[0]).then(setFavicon);
+	setRoundFavicon(JSON.stringify(window.ytInitialData).match(urlRegex)[0]);
 	
 	function run(){	
-		getChannelLogo(window.location.href).then(roundImageToDataUrl).then(setFavicon);
+		getChannelLogo(window.location.href).then(setRoundFavicon);
 	}
 	
 	async function getChannelLogo(url){
@@ -63,6 +63,10 @@
 		setTimeout(registerUrlChangeListener, 250);
 	}
 	registerUrlChangeListener();
+	
+	function setRoundFavicon(dataUrl){
+		roundImageToDataUrl(dataUrl).then(setFavicon);
+	}
 
 	async function roundImageToDataUrl(url){
 		return new Promise((resolve, reject) => {
@@ -93,9 +97,9 @@
 		let a = document.querySelectorAll("link[rel *= 'icon']");
 
 		if(a.length == 0){
-			let link = document.createElement('link');
-			link.type = 'image/x-icon';
-			link.rel = 'icon';
+			let link = document.createElement("link");
+			link.type = "image/x-icon";
+			link.rel = "icon";
 			document.head.appendChild(link);
 			a = [link];
 		}
