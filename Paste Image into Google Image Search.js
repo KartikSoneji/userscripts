@@ -2,7 +2,7 @@
 // @name		Paste Image into Google Image Search
 // @description	Performs a reverse Google Image Search with the image from the clipboard.
 // @author		Kartik Soneji
-// @license		MIT
+// @license		GPL-3.0-or-later
 // @version		1.0
 // @supportURL	https://gitlab.com/KartikSoneji/userscripts/issues
 // @updateURL	https://openuserjs.org/meta/KartikSoneji/Paste_Image_into_Google_Image_Search.meta.js
