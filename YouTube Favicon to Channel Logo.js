@@ -12,7 +12,7 @@
 // @exclude		https://www.youtube.com/live_chat*
 // @grant		none
 // @run-at		document-end
-// @license		MIT
+// @license		GPL-3.0-or-later
 // ==/UserScript==
 
 (function(){
