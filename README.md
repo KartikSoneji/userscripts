@@ -11,4 +11,6 @@ or [Tampermonkey for Firefox](https://addons.mozilla.org/en-US/firefox/addon/tam
     Changes the YouTube Favicon to the Channel logo.
 
   - [Paste Image into Google Image Search](https://openuserjs.org/scripts/KartikSoneji/Paste_Image_into_Google_Image_Search):  
-    Allows you to paste an image from your clipboard directly into Google Image Search.
+    Allows you to paste an image from your clipboard directly into Google Image Searc
+
+Questions, comments and suggestions are welcome.
