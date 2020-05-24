@@ -10,31 +10,29 @@
 // @match		https://www.google.com/search*tbm=isch*
 // @match		https://www.google.com/imghp*
 // @match		https://images.google.com/*
-// @run-at		document-end
+// @run-at		document-start
 // @grant		none
 // ==/UserScript==
 
 (function(){
-	'use strict';
-	
-	document.querySelector("input[title=\"Search\"]").addEventListener("paste", handlePasteEvent);
-	document.querySelector("div[aria-label=\"Search by image\"]").addEventListener("click", () => {
-		if(window.LABEL) return;
-		else window.LABEL = true;
+	"use strict";
 
-		setTimeout(() => document.querySelector("#qbui").addEventListener("paste", handlePasteEvent), 50);
+	window.addEventListener("load", e => {
+		//Show and hide the "Search by image" box
+		window.google.qb.tp();
+		window.google.qb.tp();
+	
+		document.querySelector("input[title = Search]").addEventListener("paste", handlePasteEvent);
+		document.querySelector("[name = image_url]").addEventListener("paste", handlePasteEvent)
 	});
 
 	function handlePasteEvent(e){
-		getImageURLFromPasteEvent(e).then(searchByImageURL).catch(console.error);
+		getImageURLFromPasteEvent(e).then(url => searchByImageURL(url)).catch(e => e);
 	}
 
 	function searchByImageURL(url){
-		window.google.qb.tp();
-		window.google.qb.tp(); //Needed twice
-
-		document.querySelector("#qbui").value = url;
-		document.querySelector("#qbbtc > input").click();
+		document.querySelector("[name = image_url]").value = url;
+		document.querySelector("[value = 'Search by image']").click();
 	}
 
 	function getImageURLFromPasteEvent(e){
