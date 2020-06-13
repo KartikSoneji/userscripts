@@ -12,75 +12,63 @@
 // @exclude		https://www.youtube.com/live_chat*
 // @grant		none
 // @run-at		document-end
+// @grant		none
 // @license		GPL-3.0-or-later
+// @noframes
 // ==/UserScript==
+
 
 (function(){
 	'use strict';
-	
-	const urlRegex = /https:\/\/yt3.ggpht.com\/a[/-]{1,2}[A-Za-z\d-_]+/;
 
-	function isInIframe(){
-		try{
-			return window.self !== window.top;
-		}
-		catch(e){
-			return true;
-		}
-	}
-	if(isInIframe()) return;
+	const urlRegex = /https:\/\/yt3.ggpht.com\/a[/-]{1,2}[a-zA-Z\d-_]+/;
 
 	console.log("Started");
-	
-	setRoundFavicon(JSON.stringify(window.ytInitialData).match(urlRegex)[0]);
-	
-	function run(){	
+
+	function run(){
 		getChannelLogo(window.location.href).then(setRoundFavicon);
 	}
-	
-	async function getChannelLogo(url){
-		return new Promise((resolve, reject) => {
-			let xhr = new XMLHttpRequest();
-			xhr.open("GET", url);
-			xhr.onload = () =>{
-				let u = xhr.responseText.match(urlRegex)[0];
-				console.log(u);
-				resolve(u);
-			}
-			xhr.send();
+
+	window.addEventListener("load", () => {
+		setRoundFavicon(JSON.stringify(window.ytInitialData).match(urlRegex)[0]);
+
+		let observer = new MutationObserver(e => setTimeout(run, 150));
+		observer.observe(document.querySelector("title"), {
+			childList: true,
+			attributes: true,
+			characterData: true
 		});
+	});
+
+	async function getChannelLogo(url){
+		return fetch(url)
+			.then(e => e.text())
+			.then(e => {
+				let u = e.match(urlRegex)[0];
+				console.log("Favicon:", u);
+				return u;
+			});
 	}
 
-	let observer = new MutationObserver(e => setTimeout(run, 150));
-
-	function registerUrlChangeListener(){
-		let e = document.querySelector("title");
-		if(e){
-			observer.observe(document.querySelector("title"), {attributes: true, characterData: true, childList: true});
-			return;
-		}
-
-		setTimeout(registerUrlChangeListener, 250);
-	}
-	registerUrlChangeListener();
-	
 	function setRoundFavicon(dataUrl){
 		roundImageToDataUrl(dataUrl).then(setFavicon);
 	}
 
 	async function roundImageToDataUrl(url){
 		return new Promise((resolve, reject) => {
-			if(url.src) url = url.src;
+			if(url.src)
+				url = url.src;
 
-			let img = document.createElement("img");
+			let img = new Image();
 			img.crossOrigin = "anonymous";
 			img.src = url;
 
 			img.onload = function(){
-				let canvas = document.createElement("canvas"), g = canvas.getContext("2d");
+				let canvas = document.createElement("canvas"),
+					g = canvas.getContext("2d");
 
-				canvas.height = img.naturalHeight;
 				canvas.width = img.naturalWidth;
+				canvas.height = img.naturalHeight;
 
 				g.beginPath();
 				g.arc(canvas.width/2, canvas.height/2, canvas.width/2, 0, Math.PI * 2);
@@ -94,7 +82,7 @@
 	}
 
 	function setFavicon(url){
-		let a = document.querySelectorAll("link[rel *= 'icon']");
+		let a = document.querySelectorAll("link[rel *= icon]");
 
 		if(a.length == 0){
 			let link = document.createElement("link");
@@ -104,6 +92,7 @@
 			a = [link];
 		}
 
-		for(let i of a) i.href = url;
+		for(let i of a)
+			i.href = url;
 	}
 })();
