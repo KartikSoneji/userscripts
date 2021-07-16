@@ -3,10 +3,11 @@
 // @version			1.1
 // @description		Performs a reverse Google Image Search with the image from the clipboard.
 // @author			Kartik Soneji
+// @icon			https://images.google.com/favicon.ico
 // @license			GPL-3.0-or-later
 // @match			https://www.google.com/search*tbm=isch*
 // @match			https://www.google.com/imghp*
-// @match			https://images.google.com/*
+// @match			https://images.google.com*
 // @grant			none
 // @run-at			document-start
 // @supportURL		https://gitlab.com/KartikSoneji/userscripts/issues
