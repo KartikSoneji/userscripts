@@ -1,20 +1,21 @@
 // ==UserScript==
-// @name		YouTube Favicon to Channel logo
-// @version		1.2
-// @description	Changes the YouTube Favicon to the Channel Logo
-// @author		Kartik Soneji
-// @updateURL	https://openuserjs.org/meta/KartikSoneji/YouTube_Favicon_to_Channel_logo.meta.js
-// @supportURL	https://gitlab.com/KartikSoneji/userscripts/issues
-// @match		https://www.youtube.com/*
-// @exclude		https://www.youtube.com/
-// @exclude		https://www.youtube.com/tv*
-// @exclude		https://www.youtube.com/embed/*
-// @exclude		https://www.youtube.com/live_chat*
-// @grant		none
-// @run-at		document-end
-// @grant		none
-// @license		GPL-3.0-or-later
+// @name			YouTube Favicon to Channel logo
+// @version			1.2
+// @description		Changes the YouTube Favicon to the Channel Logo
+// @author			Kartik Soneji
+// @icon			https://www.youtube.com/s/desktop/90b31458/img/favicon_144x144.png
+// @license			GPL-3.0-or-later
+// @match			https://www.youtube.com/*
+// @exclude			https://www.youtube.com/
+// @exclude			https://www.youtube.com/tv*
+// @exclude			https://www.youtube.com/embed/*
+// @exclude			https://www.youtube.com/live_chat*
+// @grant			none
+// @run-at			document-end
 // @noframes
+// @supportURL		https://gitlab.com/KartikSoneji/userscripts/issues
+// @updateURL		https://openuserjs.org/meta/KartikSoneji/YouTube_Favicon_to_Channel_logo.meta.js
+// @downloadURL		https://openuserjs.org/install/KartikSoneji/YouTube_Favicon_to_Channel_logo.user.js
 // ==/UserScript==
 
 

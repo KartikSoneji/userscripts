@@ -1,17 +1,17 @@
 // ==UserScript==
-// @name		Paste Image into Google Image Search
-// @description	Performs a reverse Google Image Search with the image from the clipboard.
-// @author		Kartik Soneji
-// @license		GPL-3.0-or-later
-// @version		1.0
-// @supportURL	https://gitlab.com/KartikSoneji/userscripts/issues
-// @updateURL	https://openuserjs.org/meta/KartikSoneji/Paste_Image_into_Google_Image_Search.meta.js
-// @downloadURL	https://openuserjs.org/install/KartikSoneji/Paste_Image_into_Google_Image_Search.user.js
-// @match		https://www.google.com/search*tbm=isch*
-// @match		https://www.google.com/imghp*
-// @match		https://images.google.com/*
-// @run-at		document-start
-// @grant		none
+// @name			Paste Image into Google Image Search
+// @version			1.0
+// @description		Performs a reverse Google Image Search with the image from the clipboard.
+// @author			Kartik Soneji
+// @license			GPL-3.0-or-later
+// @match			https://www.google.com/search*tbm=isch*
+// @match			https://www.google.com/imghp*
+// @match			https://images.google.com/*
+// @grant			none
+// @run-at			document-start
+// @supportURL		https://gitlab.com/KartikSoneji/userscripts/issues
+// @updateURL		https://openuserjs.org/meta/KartikSoneji/Paste_Image_into_Google_Image_Search.meta.js
+// @downloadURL		https://openuserjs.org/install/KartikSoneji/Paste_Image_into_Google_Image_Search.user.js
 // ==/UserScript==
 
 (function(){
