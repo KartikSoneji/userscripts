@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name			Paste Image into Google Image Search
-// @version			1.0
+// @version			1.1
 // @description		Performs a reverse Google Image Search with the image from the clipboard.
 // @author			Kartik Soneji
 // @license			GPL-3.0-or-later
@@ -14,9 +14,7 @@
 // @downloadURL		https://openuserjs.org/install/KartikSoneji/Paste_Image_into_Google_Image_Search.user.js
 // ==/UserScript==
 
-(function(){
-	"use strict";
-
+(() => {
 	window.addEventListener("load", e => {
 		//Show and hide the "Search by image" box
 		window.google.qb.tp();
